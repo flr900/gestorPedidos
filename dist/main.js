@@ -111,8 +111,8 @@ var mainWindow;
 
 function createWindow() {
   mainWindow = new electron__WEBPACK_IMPORTED_MODULE_0__["BrowserWindow"]({
-    width: 1100,
-    height: 700,
+    width: 1920,
+    height: 1080,
     backgroundColor: '#191622',
     webPreferences: {
       nodeIntegration: true

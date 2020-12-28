@@ -1,11 +1,18 @@
 import React from 'react'
 import OrderInput from '../components/orderInput'
+import OrderList from '../components/orderList'
+
+
+import {DivContainer} from '../styles/home.styles'
 
 function Home () {
   return (
-    <body>
-    <OrderInput/>
-    </body>
+    <DivContainer>
+      <div id="container">
+      <OrderInput/>
+      <OrderList/>
+      </div>
+    </DivContainer>
   )
 }
 export default Home

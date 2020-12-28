@@ -1,16 +1,14 @@
 import styled from 'styled-components'
 import Select from 'react-select'
 
-const dropList = [
-  { value: 'Ifood', label: 'Ifood' },
-  { value: 'Cartão', label: 'Cartão' },
-  { value: 'Dinheiro', label: 'Dinheiro' }
-]
 
-
-export const CardContainer = styled.div`
+export const CardContainer = styled.section`
 max-width: 555px;
+width:30%;
+height: 40%;
 max-height: 251px;
+
+margin-right: 29px;
 
 background: #4C3161;
 border-radius: 10px;
@@ -19,20 +17,28 @@ display:flex;
 flex-direction:column;
 align-items:center;
 justify-content: center;
+position:relative;
 
 input#nameInput {
 
-  width: 474px;
-  height: 44px;
+  width: 85%;
+  max-width:474px;
+  height: 4vh;
+  max-height: 44px;
 
+
+  margin-top: 31px;
+
+  
   border: 0px;
   border-radius: 10px;
-
+  outline: none;
+  
   font-family: roboto, sans-serif;
   font-style: normal;
-  font-weight: 100;
-  font-size: 25px;
-  line-height: 35px;
+  font-weight: 300;
+  font-size: 2.5rem;
+  line-height: 3.5rem;
   text-align: center;
   color: #232020;
   background: #FFFFFF;
@@ -41,45 +47,72 @@ input#nameInput {
 
 
 div{
-  width: 474px;
-
-  margin-top: 9px;
-  display: flex
+  width: 85%;
+  max-width:474px;
+  
+  margin-top: 15px;
+  display: flex;
   align-items: center;
   justify-content: space-between;
-
+  
   input{
-    width: 191px;
-    height: 44px;
     border: 0px;
     border-radius: 10px;
+    outline: none;
 
+    height: 4vh;
+    max-height: 44px;
 
     font-family: roboto, sans-serif;
     font-style: light;
-    font-weight: 100;
-    font-size: 25px;
+    font-weight: 300;
+    font-size: 2.5rem;
     
-    line-height: 35px;
+    line-height: 3.5rem;
     text-align:center;
 
+  }
+
+  input#paymentInput{
+    width:100%;
+    max-width: 256px;
+
+    margin-right: 1.510vw;
+  }
+
+  input#totalInput{
+    width: 100%;
+    max-width: 191px;
+  }
+
+  input#totalInput::-webkit-outer-spin-button,
+  input#totalInput::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  input#totalInput[type=number] {
+    -moz-appearance: textfield;
   }
 }
 
   button#sendButton{
-    width: 426px;
-    height: 44px;
+    width: 85%;
+    max-width: 426px;
+    height: 4vh;
+    max-height: 44px;
 
-    margin-top:38px;
+    margin: 30px auto;
 
     border:0;
     border-radius:10px;
+    outline: none;
 
     font-family: roboto, sans-serif;
     font-style: normal;
-    font-weight: 100;
-    font-size: 25px;
-    line-height: 35px;
+    font-weight: 300;
+    font-size: 2.5rem;
+    line-height: 3.5rem;
     text-align: center;
 
     color: #232020;
@@ -92,6 +125,14 @@ div{
      background-color: #D0EFB1;
 
   }
+  
+  img#logo{
+    position:absolute;
+    top: 120%;
+    max-width: 300px;
+    width:100%;
+  }
+  
 `
 export const PaymentDropdown = styled(Select)`
   width: 256px;
@@ -99,7 +140,7 @@ export const PaymentDropdown = styled(Select)`
   color: "#232020";
 
   font-family: roboto, sans-serif;
-  font-weight: 100;
+  font-weight: 300;
   font-size: 25px;
   line-height: 35px;
   text-align: center;

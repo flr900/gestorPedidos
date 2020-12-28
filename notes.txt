@@ -1,0 +1,11 @@
+  <ListItem>
+        <div id="itemIdentifier">
+          <h3>19:42</h3>
+          <strong>Felipe Leite</strong>
+        </div>
+        <div id="itemDetails">
+          <h3>Cartão</h3>
+          <h3>38,00R$</h3>
+          <h3>Andamento</h3>
+        </div>
+      </ListItem>
