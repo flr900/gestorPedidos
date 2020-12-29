@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import Select from 'react-select'
+import styled from "styled-components"
+import Select from "react-select"
 
 
 export const CardContainer = styled.section`
@@ -10,7 +10,7 @@ max-height: 251px;
 
 margin-right: 29px;
 
-background: #4C3161;
+background: #4C3161; 
 border-radius: 10px;
 
 display:flex;

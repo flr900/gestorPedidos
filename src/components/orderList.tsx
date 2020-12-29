@@ -1,31 +1,48 @@
-import React, {useEffect, useState} from "react"
+import React, {useEffect, useState, MouseEvent} from "react"
 
 import {arrayList} from "../assets/suport"
 
 import {DivContainer, ListItem} from "../styles/orderList"
 
 
-
 export default function OrderList (){
 	const [itemList,setItemList] = useState(arrayList)
+
+	useEffect(() => {
+		setItemList(arrayList)
+	},[])
   
-	function handleStatus(id:string){
-		const newItemList = itemList.map( item => {
-			  	if(item.id == id) {
-		   		id.status = "Finalizado"
-	   	  }
-		  }
-		)
-		setItemList(newItemList)
+
+	function handleStatus (id:string){
 		
+		const newItemList = itemList.map( item => {
+			if (item.id === id) {
+				switch(item.status){
+				case "Andamento":
+					return {...item, status: "Finalizado"}
+					break
+				// case "Enviado":
+				// 	return {...item, status: "Finalizado"}
+				// 	break
+				default:
+					return {...item, status:"Andamento"}
+				}
+			} else {
+				return item
+			}
+		})
+		
+
+		setItemList(newItemList)
 	}
+
 
 	return(
 		<DivContainer>
 			<div className="wrapper">
 				{itemList.map(item =>{
 					return(
-						<ListItem onClick={handleStatus(item.id)}  key={item.id}>
+						<ListItem onClick={() => handleStatus(item.id)} key={item.id} theme={item.status}>
 							<div className="itemIdentifier">
 								<h3>{item.orderTime}</h3>
 								<strong>{item.customer}</strong>

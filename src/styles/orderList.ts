@@ -34,7 +34,7 @@ export const ListItem = styled.div`
   max-height: 44px;
   height:90%;
 
-  background-color: #D0EFB1;
+  background-color: ${props => props.theme === "Andamento" ? "#D0EFB1" : "#C4C4C4"};
 
   border:none;
   border-radius:10px;
