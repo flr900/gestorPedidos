@@ -1,7 +1,10 @@
-import Store from "electron-store"
+import Store,{Schema} from "electron-store"
 
 
-const schema = {
+
+const schema:Schema<{
+	orders:string
+}> = {
 	orders: {
 		type: "string",
 	}

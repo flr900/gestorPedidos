@@ -2,11 +2,9 @@ import React, { useState } from "react"
 import {uuid} from "uuidv4"
 import {CardContainer} from "../styles/orderInput"
 
-import {set} from"../services/dbCrud"
-
-import {store} from "../services/connections/dbConnection"
-
 import logo from "../assets/images/logo.png"
+import { store } from "../services/connections/dbConnection"
+import IorderItem from "../models/OrdersTypes"
 
 // const dropList = [
 // 	{ value: "Ifood", label: "Ifood" },
@@ -15,12 +13,13 @@ import logo from "../assets/images/logo.png"
 // ]
 
 export default function OrderInput(){
-
 	const [nameInput, setNameInput] = useState("")
 	const [paymentInput, setPaymentInput] = useState("")
 	const [totalInput, setTotalInput] = useState("")
 
 	function handleSentOrder(){
+		const list = store.get("orders")	
+		const orderList:IorderItem[] = JSON.parse(list)
 		const orderItem = {
 			id: uuid(),
 			customer: nameInput,
@@ -30,7 +29,8 @@ export default function OrderInput(){
 			status: "Andamento" 
 		}
 
-		set(orderItem)
+		console.log(orderList)
+		store.set("orders",JSON.stringify([...orderList,orderItem]))
 
 	}
 
