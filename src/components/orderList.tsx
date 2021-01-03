@@ -11,14 +11,13 @@ import {AiFillDelete } from "react-icons/ai"
 
 export default function OrderList (){
 	const [itemList,setItemList] = useState<IorderItem[]>([])
-	let refresh = false
 
 	useEffect(() => {
 		const list = store.get("orders")
 		const orderList:IorderItem[] = JSON.parse(list)
 		console.log(list)
 		setItemList(orderList)
-	},[refresh])
+	},[])
   
 
 	function handleStatus (id:string){
@@ -45,9 +44,7 @@ export default function OrderList (){
 	}
 
 	function handleDeletion () {
-		clear()
-		refresh = !refresh
-		console.log(refresh)
+		setItemList([])
 	}
 
 
